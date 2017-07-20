@@ -13,9 +13,9 @@
 ####################################
 
 ## Title: Slow Dialogs - Custom Controls
-## Description: Adds a fully customizable control to Slow Dialogs for skipping animations.
+## Description: Adds a fully customizable control to Slow Dialogs by Shinni for skipping animations.
 ## Author: |c0080ffTyx|r
-## Version 1.0.0
+## Version 1.1.0
 ## APIVersion: 100019
 ## SavedVariables: SDCC
 ## DependsOn: SlowDialogs
@@ -52,6 +52,8 @@ SDCC.lua
 
 lang\en.lua
 lang\$(language).lua
+
+lang\Localization_$(language).lua
 
 
 Bindings.xml
