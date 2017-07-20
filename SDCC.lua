@@ -1,7 +1,7 @@
 -------------------------------------------
 -- Globals
 -------------------------------------------
-SDCC = {}
+sdct = {}
 
 -------------------------------------------
 -- Locals
@@ -22,7 +22,6 @@ function SDCC_SKIP()
 end
 
 function SDCC_ANYKEY()
-d("anykey")
 	if saved.anykey then
 		SlowDialogsGlobal.Skip()
 	end
@@ -41,8 +40,8 @@ local function InitSettings()
     local data = {
 		[1] = {
 			type = "checkbox",
-			name = SDCC.loc.SDCC_SKIP_TITLE,
-			tooltip = SDCC.loc.ST_ANY_DESC,
+			name = sdct.loc.SDCC_SKIP_TITLE,
+			tooltip = sdct.loc.ST_ANY_DESC,
 			getFunc = function() return saved.anykey end,
 			setFunc = ToggleAnyKey
 		}
