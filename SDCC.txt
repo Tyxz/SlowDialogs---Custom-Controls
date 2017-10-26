@@ -15,8 +15,8 @@
 ## Title: Slow Dialogs - Custom Controls
 ## Description: Adds a fully customizable control to Slow Dialogs by Shinni for skipping animations.
 ## Author: |c0080ffTyx|r
-## Version 1.1.0
-## APIVersion: 100019
+## Version 1.1.2
+## APIVersion: 100021
 ## SavedVariables: SDCC
 ## DependsOn: SlowDialogs
 ## OptionalDependsOn: LibAddonMenu-2.0
@@ -28,7 +28,7 @@
 
 ## Source: http://www.esoui.com/downloads/info7-LibAddonMenu.html
 ## Source_Author: sirinsidiator, Seerah 
-## Source_Version: 2.0 r23
+## Source_Version: 2.0 r24
 libs\LibStub\LibStub.lua
 libs\LibAddonMenu-2.0\LibAddonMenu-2.0.lua
 libs\LibAddonMenu-2.0\controls\panel.lua
@@ -43,6 +43,8 @@ libs\LibAddonMenu-2.0\controls\editbox.lua
 libs\LibAddonMenu-2.0\controls\header.lua
 libs\LibAddonMenu-2.0\controls\slider.lua
 libs\LibAddonMenu-2.0\controls\texture.lua
+libs\LibAddonMenu-2.0\controls\iconpicker.lua
+libs\LibAddonMenu-2.0\controls\divider.lua
 
 ##########
 ## SDCC ##
