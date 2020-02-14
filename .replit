@@ -1,0 +1,2 @@
+language = "lua"
+run = "make clean && make LUAROCKS=/home/runner/.luarocks/bin/ local"

@@ -1,0 +1,8 @@
+project = 'Slow Dialogs - Custom Control'
+format = 'discount'
+file = 'Lib/SDCC.lua'
+dir = 'docs'
+all = true
+readme = "README.md"
+title = "SDCC Documentation"
+description = "A patch for <a href='https://www.esoui.com/downloads/fileinfo.php?id=66'>Slow Dialogs from Shinni</a> adding a custom control binding for skipping the dialogue animation. Additionally, you can also enable (default) to skip a dialogue by pressing your mouse button.<br>Additionally, it provides a translation into German when playing with a German client."
