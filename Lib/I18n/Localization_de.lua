@@ -5,16 +5,22 @@
     Updated:    2020-02-14
     License:    GPL-3.0
 ----------------------------------------------]]--
-local SlowDialogs = SlowDialogsGlobal
 
-SlowDialogs.displayName = "Langsame Dialoge"
-SlowDialogs.author = "Shinni"
+--- German translation for SlowDialogsGlobal
+local translation = {
+    displayName = "Langsame Dialoge",
+    author = "Shinni",
 
-SlowDialogs.delayOption = "Verzögerung"
-SlowDialogs.delayTooltip = "Verzögerung zwischen zwei Zeichen in Millisekunden."
+    delayOption = "Verzögerung",
+    delayTooltip = "Verzögerung zwischen zwei Zeichen in Millisekunden.",
 
-SlowDialogs.startDelayOption = "Anfängliche Verzögerung"
-SlowDialogs.startDelayTooltip = "Verzögerung bis der Text anfängt zu erscheinen."
+    startDelayOption = "Anfängliche Verzögerung",
+    startDelayTooltip = "Verzögerung bis der Text anfängt zu erscheinen.",
 
-SlowDialogs.fadeLengthOption = "Einblendlänge"
-SlowDialogs.fadeLengthTooltip = "Länger der Einblendanimation."
+    fadeLengthOption = "Einblendlänge",
+    fadeLengthTooltip = "Länger der Einblendanimation."
+}
+
+for key, str in pairs(translation) do
+    SlowDialogsGlobal[key] = str
+end

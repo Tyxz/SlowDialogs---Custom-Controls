@@ -9,6 +9,8 @@
 -- -----------------------------------------
 -- Globals
 -- -----------------------------------------
+
+--- Constants of Slow Dialog - Custom Controls
 SDCC = {
     name = "SDCC",
     version = 1,

@@ -10,6 +10,8 @@ SDCC = SDCC or {}
 -- -----------------------------------------
 -- Bindings
 -- -----------------------------------------
+
+--- Call the parent skip function
 function SDCC.SKIP()
 	SlowDialogsGlobal.Skip()
 end

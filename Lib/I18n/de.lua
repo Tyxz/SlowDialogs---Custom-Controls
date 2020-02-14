@@ -6,6 +6,8 @@
     License:    GPL-3.0
 ----------------------------------------------]]--
 SDCC = SDCC or {}
+
+--- German translation for LibAddonMenu2
 SDCC.loc = {
 	SDCC_SKIP_TITLE = "Überspringe die Slow Dialog Animation",
 	ST_ANY_NAME 	= "Überspringen mit Maus",
