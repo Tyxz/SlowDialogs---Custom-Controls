@@ -2,6 +2,7 @@ std = "min+busted+eso"
 stds.eso = {
     globals = {
         "SDCC",
+        "SDCC_SKIP",
         "SlowDialogsGlobal",
         "LibAddonMenu2",
         "ZO_SavedVars",
