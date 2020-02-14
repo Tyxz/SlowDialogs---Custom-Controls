@@ -1,3 +1,10 @@
+--[[----------------------------------------------
+    Project:    Slow Dialogs
+    Author:     Arne Rantzen (Tyx)
+    Created:    2017-07-20
+    Updated:    2020-02-14
+    License:    GPL-3.0
+----------------------------------------------]]--
 local SlowDialogs = SlowDialogsGlobal
 
 SlowDialogs.displayName = "Langsame Dialoge"

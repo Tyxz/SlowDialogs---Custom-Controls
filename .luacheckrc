@@ -1,14 +1,21 @@
-std = "min+eso"
+std = "min+busted+eso"
 stds.eso = {
     globals = {
-        "SDCCG },
-    read_globals = {
-        "ZO_CZO_SavedVarsea
-        "ZO_CreateStringId",
-        "SlowDialogsGlobal",teStringIdEVENT_MANAGERO_
+        "SDCC",
+        "SlowDialogsGlobal",
         "LibAddonMenu2",
+        "ZO_SavedVars",
+        "ZO_CreateStringId",
+        "EVENT_MANAGER",
+        "EVENT_ADD_ON_LOADED",
         "EVENT_GLOBAL_MOUSE_DOWN",
-        "EVENT_ADD_ON_LOADED"_ON_LOADk_ZO.lua"
+    },
+    read_globals = {
+    }
+}
+self = false
+exclude_files = {
+    "Test/ZOMock.lua",
 }
 include_files = {
     "Lib/**/*.lua",

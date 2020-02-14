@@ -1,5 +1,8 @@
 LUAROCKS ?=
+BUSTED = luarocks install busted
 CHECK = luarocks install luacheck
+COV = luarocks install luacov
+COVALL = luarocks install luacov-coveralls
 DISCOUNT = luarocks install lua-discount
 LDOC = luarocks install ldoc
 
@@ -9,15 +12,18 @@ clean:
 	@rm -rf ./docs
 
 local:
-	$(CHECK) --local
+	$(BUSTED) --local && $(CHECK) --local
+	$(COV) --local && $(COVALL) --local
 	$(DISCOUNT) --local && $(LDOC) --local
 	@make $(LUAROCKS) run
 
 global:
-	$(CHECK)
+	$(BUSTED) && $(CHECK)
+	$(COV) && $(COVALL)
 	$(DISCOUNT) && $(LDOC)
 	@make run
 
 run:
-	$(LUAROCKS)luacheck .
-	$(LUAROCKS)ldoc Lib -c ./.luadoc
+	$(LUAROCKS)luacheck . \
+	&& $(LUAROCKS)busted -R Test/Lib --verbose --coverage \
+	&& $(LUAROCKS)ldoc Lib -c ./.luadoc

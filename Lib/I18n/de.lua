@@ -1,3 +1,10 @@
+--[[----------------------------------------------
+    Project:    Slow Dialogs - Custom Controls
+    Author:     Arne Rantzen (Tyx)
+    Created:    2017-07-20
+    Updated:    2020-02-14
+    License:    GPL-3.0
+----------------------------------------------]]--
 SDCC = SDCC or {}
 SDCC.loc = {
 	SDCC_SKIP_TITLE = "Überspringe die Slow Dialog Animation",

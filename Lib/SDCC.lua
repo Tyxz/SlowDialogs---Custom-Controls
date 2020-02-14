@@ -5,20 +5,7 @@
     Updated:    2020-02-14
     License:    GPL-3.0
 ----------------------------------------------]]--
-
--- -----------------------------------------
--- Globals
--- -----------------------------------------
 SDCC = SDCC or {}
-
--- -----------------------------------------
--- Locals
--- -----------------------------------------
-SDCC.name = "SDCC"
-SDCC.version = 1
-SDCC.defaults = {
-    anykey = true
-}
 
 -- -----------------------------------------
 -- Bindings
@@ -46,8 +33,8 @@ function SDCC:InitSettings()
                 type = "checkbox",
                 name = self.loc.SDCC_SKIP_TITLE,
                 tooltip = self.loc.ST_ANY_DESC,
-                getFunc = function() return self.saved.anykey end,
-                setFunc = function(value) self:SetAnyKey(value) end
+                getFunc = function() return self.saved.skipWithMouse end,
+                setFunc = function(value) self:SetSkipWithMouse(value) end
             }
         }
         LAM:RegisterOptionControls(self.name, data)
@@ -55,9 +42,9 @@ function SDCC:InitSettings()
 end
 
 --- Register if skipped when mouse pressed
--- @param bool if mouse down can be used to skip
-function SDCC:SetAnyKey(useMouse)
-	self.saved.anykey = useMouse
+-- @param useMouse is a bool if mouse down can be used to skip
+function SDCC:SetSkipWithMouse(useMouse)
+	self.saved.skipWithMouse = useMouse
 	if useMouse then
 		EVENT_MANAGER:RegisterForEvent("SDCC_ANYKEY", EVENT_GLOBAL_MOUSE_DOWN, SDCC.SKIP)
 	else
@@ -68,16 +55,22 @@ end
 -- -----------------------------------------
 -- Start
 -- -----------------------------------------
-local function OnAddOnLoaded(_, addOnName)
-    if(addOnName ~= "SDCC") then return end
 
-	SDCC.saved = ZO_SavedVars:NewAccountWide(SDCC.name, SDCC.version, nil, SDCC.defaults)
+--- Setup addon
+-- @param addOnName is the event handle for this addon
+function SDCC:Setup(addOnName)
+    if(addOnName ~= SDCC.name) then return end
+	self.saved = ZO_SavedVars:NewAccountWide(self.name, self.version, nil, self.defaults)
 
-	SDCC:InitSettings()
+	self:InitSettings()
+
+    self:SetSkipWithMouse(self.saved.skipWithMouse)
 
     EVENT_MANAGER:UnregisterForEvent(SDCC.name, EVENT_ADD_ON_LOADED)
-
-	SDCC:SetAnyKey(SDCC.saved.anykey)
 end
+
 --Register Loaded Callback
-EVENT_MANAGER:RegisterForEvent(SDCC.name, EVENT_ADD_ON_LOADED, OnAddOnLoaded)
+EVENT_MANAGER:RegisterForEvent(
+    SDCC.name, EVENT_ADD_ON_LOADED,
+    function(_, addOnName) SDCC:Setup(addOnName) end
+)

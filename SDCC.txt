@@ -25,12 +25,17 @@
 ## SDCC ##
 ##########
 
-Lib\SDCC.lua
+Lib\Core\Constants.lua
 
 Lib\I18n\en.lua
 Lib\I18n\$(language).lua
 
-Lib\I18n\Localization_$(language).lua
-
+Lib\SDCC.lua
 
 Lib\Bindings.xml
+
+#################
+## Translation ##
+#################
+
+Lib\I18n\Localization_$(language).lua
