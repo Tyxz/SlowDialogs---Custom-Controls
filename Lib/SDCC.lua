@@ -12,7 +12,7 @@ SDCC = SDCC or {}
 -- -----------------------------------------
 
 --- Call the parent skip function
-function SDCC.SKIP()
+function SDCC_SKIP()
 	SlowDialogsGlobal.Skip()
 end
 
@@ -48,7 +48,7 @@ end
 function SDCC:SetSkipWithMouse(useMouse)
 	self.saved.skipWithMouse = useMouse
 	if useMouse then
-		EVENT_MANAGER:RegisterForEvent("SDCC_ANYKEY", EVENT_GLOBAL_MOUSE_DOWN, SDCC.SKIP)
+		EVENT_MANAGER:RegisterForEvent("SDCC_ANYKEY", EVENT_GLOBAL_MOUSE_DOWN, SDCC_SKIP)
 	else
 		EVENT_MANAGER:UnregisterForEvent("SDCC_ANYKEY", EVENT_GLOBAL_MOUSE_DOWN)
 	end
@@ -58,10 +58,8 @@ end
 -- Start
 -- -----------------------------------------
 
---- Setup addon
--- @param addOnName is the event handle for this addon
-function SDCC:Setup(addOnName)
-    if(addOnName ~= SDCC.name) then return end
+--- Initialize addon
+function SDCC:Initialize()
 	self.saved = ZO_SavedVars:NewAccountWide(self.name, self.version, nil, self.defaults)
 
 	self:InitSettings()
@@ -74,5 +72,8 @@ end
 --Register Loaded Callback
 EVENT_MANAGER:RegisterForEvent(
     SDCC.name, EVENT_ADD_ON_LOADED,
-    function(_, addOnName) SDCC:Setup(addOnName) end
+    function(_, addOnName)
+        if(addOnName ~= SDCC.name) then return end
+        SDCC:Initialize()
+    end
 )
