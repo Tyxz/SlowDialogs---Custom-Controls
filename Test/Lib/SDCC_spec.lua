@@ -64,7 +64,7 @@ describe("SDCC", function()
             ZO_SavedVars = mock(ZO_SavedVars)
             require("Lib.SDCC")
             SDCC = mock(SDCC)
-            SDCC:Initialize()
+            SDCC:Initialize(nil, SDCC.name)
         end)
         it("should create saved var when started", function()
             assert.spy(ZO_SavedVars.NewAccountWide).was.called_with(
