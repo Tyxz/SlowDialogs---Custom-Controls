@@ -15,8 +15,8 @@
 ## Title: Slow Dialogs - Custom Controls
 ## Description: Adds a fully customizable control to Slow Dialogs by Shinni for skipping animations.
 ## Author: |c0080ffTyx|r
-## Version 1.1.4
-## APIVersion: 100030
+## Version 1.1.5
+## APIVersion: 100031
 ## SavedVariables: SDCC_Settings
 ## DependsOn: SlowDialogs
 ## OptionalDependsOn: LibAddonMenu-2.0
